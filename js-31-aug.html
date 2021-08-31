@@ -67,7 +67,69 @@
             console.log(j);
             j++;
         } while(j<10);
+
+        // Difference between var, let and const
+        // var is globally scoped
+        // let is locally scoped
+
+        if(true) {
+            var gh = "abc";
+        }
+        console.log("gh",gh);
+
+        // this is how var works internally
+        // this is called hoisting
+        // var gh;
+        // if(true) {
+        //     gh = "abc";
+        // }
+        // console.log("gh",gh);
+
+        if(true) {
+            let xy = "abc";
+            console.log("xy inside",xy)
+        }
+        // console.log("xy",xy); // this will throw error
         
-        
+        const a = 0;
+        // a=10; // this will throw an error, constants cannot be updated
+
+        console.log("95",a);
+
+        // composite data types
+        // 1. arrays // index is always a number
+        // 2. objects // index is always a string
+        var arr = [100,200,300];
+        console.log(arr);
+        console.log(arr[0]); // 0 is called 'index' or 'position'
+        console.log(arr[2]);
+
+        var arry = [100, 'string', false, 100, 200, 300, 400];
+        console.log(arry);
+        console.log(arry[0]); // 0 is called 'index' or 'position'
+        console.log(arry[1]);
+        console.log(arry[2]);
+
+        console.log(arry.length);
+
+        for(let i=0; i<arry.length; i++) {
+            console.log(i,arry[i]);
+        }
+
+
+        var details = {
+            "name": "abc",
+            "class": 10
+        }
+        console.log(details["name"]);
+        console.log(details.name);
+        let key = "name";
+        console.log(details[key]);
+        console.log(details.length);
+
+        console.log(typeof arry, typeof details);
+        // typeof will be 'object' for both arrays and objects
+        // to differentitate them use .length property
+
     </script>
 </html>
