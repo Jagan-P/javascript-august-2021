@@ -50,6 +50,68 @@
             for(let key in obj) {
                 console.log(key, obj[key]);
             }
+
+
+            let ifCounter = 0;
+            // even numbers 1 to 100 using if
+            console.log("even numbers 1 to 100 using if")
+            for(let i=0; i<100; i++) {
+                ifCounter++;
+                if(i%2==0) {
+                    console.log(i);
+                }
+            }
+            console.log("number of operations",ifCounter);
+
+            let withoutIfCounter = 0;
+            //even numbers 1 to 100 without if
+            console.log("even numbers 1 to 100 without if")
+            for(let i=0; i<100; i=i+2) {
+                withoutIfCounter++;
+                console.log(i);
+            }
+            console.log("number of operations",withoutIfCounter);
+
+            // why composite data types?
+            var a = 10;
+            var b = a;
+            // undefined
+            a
+            // 10
+            b
+            // 10
+            a=20;
+            // 20
+            a
+            // 20
+            b
+            // 10
+            var c = [100,200,300];
+            var d = c;
+
+            // undefined
+            c
+            // (3) [100, 200, 300]
+            d
+            // (3) [100, 200, 300]
+            d[0]=700;
+            // 700
+            d
+            // (3) [700, 200, 300]
+            c
+            // (3) [700, 200, 300]
+
+            var arr1 = [100, [1,2,3], 300, {"details": [0,102]}];
+            var obj1 = {
+                "name": "ABC",
+                "details": {
+                    "age":100,
+                    "class": "A"
+                },
+                "arr1": arr1
+            }
+            arr1[0]=700;
+            console.log(arr1, obj1);
         </script>
     </body>
-</html>
+</html> 
