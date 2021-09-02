@@ -8,10 +8,13 @@
         <script>
             //prime numbers between 1 to 100
 
-            for(let i=2; i<100; i++) {
+            let counter=0;
+            for(let i=1; i<100; i=i+2) {
                 let num = i;
                 let isPrime = true;
+                // console.log(num);
                 for(let j=2; j<num; j++) {
+                    counter++;
                     if(num%j==0) {
                         isPrime = false;
                     }
@@ -21,6 +24,24 @@
                 }
                 // console.log("whether",num,"isPrime",isPrime);   
             }
+            console.log("number of loops", counter);
+
+            let arr = [100,200,300];
+            arr.push(0);
+            arr.push(false);
+            arr.push("abc");
+            arr.push([1,2,3]);
+            console.log(arr);
+            arr.pop();
+            console.log(arr);
+
+            // tasks
+            // 1. Generate an array of prime numbers between 1 to x - x will be given later
+            // 2. I have an array of booleans. 
+                // My output should be true only if all elements are true
+
+                // let arr=[true, true, true, true] -> true
+                // let arr = [true, true, false, true] -> false
         </script>
     </body>
 </html>
