@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+    </head>
+    <body>
+        <script>
+            //prime numbers between 1 to 100
+
+            for(let i=2; i<100; i++) {
+                let num = i;
+                let isPrime = true;
+                for(let j=2; j<num; j++) {
+                    if(num%j==0) {
+                        isPrime = false;
+                    }
+                }
+                if(isPrime) {
+                    console.log(num);
+                }
+                // console.log("whether",num,"isPrime",isPrime);   
+            }
+        </script>
+    </body>
+</html>
