@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+    </head>
+    <body>
+        <script>
+            let booleans = [true, true, true, true, true];
+            let result = booleans[0];
+            for(let i=1; i<booleans.length; i++) {
+                result = result && booleans[i];
+            }
+            console.log(result);
+
+            booleans = [false, false, false, false, true];
+            result = booleans[0];
+            for(let i=1; i<booleans.length; i++) {
+                result = result || booleans[i];
+            }
+            console.log(result);
+
+
+            // only if the array starts with true and it is alternative, output should be true
+
+            // [true, false, true] => true
+            // [true, false, true, false, false] => false
+            // [false, true, false, true] => false
+        </script>
+    </body>
+</html>
