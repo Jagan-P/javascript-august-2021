@@ -26,6 +26,48 @@
             // [true, false, true] => true
             // [true, false, true, false, false] => false
             // [false, true, false, true] => false
+
+            // Functions
+            // Functions are used to execute repetitive code
+            // 1. Function without argument, without return type
+            // 2. Function without argument, with return type
+            // 3. Function with argument, without return type
+            // 4. Function with argument with return type
+            
+            function withoutArgumentWithoutReturn() {
+                console.log("abc");
+                var a = 100;
+                var b= 200;
+                console.log(a+b);
+            }
+
+            withoutArgumentWithoutReturn();
+            withoutArgumentWithoutReturn();
+
+            function withoutArgumentWithReturn() {
+                let a = 10;
+                return a;
+            }
+
+            result = withoutArgumentWithReturn();
+            console.log(result+100);
+
+            function withArgumentWithoutReturn(num) {
+                console.log("you sent",num);
+            }
+            withArgumentWithoutReturn(100);
+
+            function withArgumentWithReturn(num, num2) {
+                return num*num2;
+            }
+
+            console.log(withArgumentWithReturn(4,4));
+
+            console.log(console.log("hello","world"));
+
+            let array1 = [];
+            console.log(array1.push(100));
+
         </script>
     </body>
 </html>
