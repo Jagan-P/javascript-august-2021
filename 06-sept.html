@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+    </head>
+    <body>
+        <script>
+            // only if the array starts with true and it is alternative, output should be true
+
+            // [true, false, true] => true
+            // [true, false, true, false, false] => false
+            // [false, true, false, true] => false
+
+            let array = [true, false, false, false, true];
+            let res = true;
+            for(let i=0; i<array.length; i++) {
+                if(i%2==0) {
+                    if(array[i]==true) {
+                        res = res && true;
+                    }
+                    else {
+                        res = res && false;
+                    }
+                }
+                else {
+                    if(array[i]==false) {
+                        res = res && true;
+                    }
+                    else {
+                        res = res && false;
+                    }
+                }
+            }
+            console.log(res);
+        </script>
+    </body>
+</html>
