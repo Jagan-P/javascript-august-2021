@@ -5,6 +5,8 @@
         </title>
     </head>
     <body>
+        <button onclick="buttonClick(event)">Click me to do something</button>
+        <input onkeyup="keyboard(event)" onblur="keyboard(event)"/>
         <script>
             // only if the array starts with true and it is alternative, output should be true
 
@@ -33,6 +35,76 @@
                 }
             }
             console.log(res);
+
+
+            for(let i=0; i<10; i++) {
+                console.log(i);
+                if(i==4) {
+                    break;
+                }
+
+                // if(i==4) {
+                //     return 0;
+                // }
+            }
+            function stopWhen4() {
+                for(let i=0; i<10; i++) {
+                    console.log(i);
+                    // if(i==4) {
+                    //     break;
+                    // }
+
+                    if(i==4) {
+                        // once return is executed your function will stop
+                        return;
+                    }
+                }
+            }
+            stopWhen4();
+            
+            // Events
+            // Events is one of the ways you can interact with users
+            // 1. Browser events
+            // 2. User events
+            // 3. Custom events
+
+            function buttonClick(event) {
+                console.log("button clicked", event);
+            }
+
+            function keyboard(event) {
+                console.log(event);   
+            }
+
+            let array3Pattern = [true, false, true, true, false, false];
+            let array3PatternRes = true;
+            for(let i=1; i<array3Pattern.length; i++) {
+                if(((i+1)%3)==0) {
+                    if(array3Pattern[i]==true) {
+                        array3PatternRes = array3PatternRes && true;
+                    }
+                    else {
+                        array3PatternRes = array3PatternRes && false;
+                    }
+                }
+                if(((i+1)%3)==1) {
+                    if(array3Pattern[i]==true) {
+                        array3PatternRes = array3PatternRes && true;
+                    }
+                    else {
+                        array3PatternRes = array3PatternRes && false;
+                    }
+                }
+                if(((i+1)%3)==2) {
+                    if(array3Pattern[i]==false) {
+                        array3PatternRes = array3PatternRes && true;
+                    }
+                    else {
+                        array3PatternRes = array3PatternRes && false;
+                    }
+                }
+            }
+            console.log(array3PatternRes);
         </script>
     </body>
 </html>
