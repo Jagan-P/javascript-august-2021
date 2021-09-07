@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+        <style>
+            #uniq {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Some para
+        </p>
+        <p class="para">
+            Some para
+        </p>
+        <p class="para">
+            Some para
+        </p>
+        <p id="uniq">Some para</p>
+        <p id="uniq">Some para</p>
+
+        <script>
+            // Every element or tag in HTML is a DOM element
+            // DOM - Document Object Model
+
+            console.log(document);
+            console.log(document.getElementsByTagName("p"));
+            console.log(document.getElementsByClassName("para"));
+            console.log(document.getElementById("uniq"));
+
+            console.log(document.querySelectorAll("p"));
+            console.log(document.querySelectorAll(".para"));
+            console.log(document.querySelectorAll("#uniq"));
+
+            console.log(document.querySelector("p"));
+            console.log(document.querySelector(".para"));
+            console.log(document.querySelector("#uniq"));
+        </script>
+    </body>
+</html>
