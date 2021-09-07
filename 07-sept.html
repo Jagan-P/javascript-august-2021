@@ -7,6 +7,11 @@
             #uniq {
                 color: red;
             }
+
+            .diff {
+                color: purple;
+                background-color: lightgray;
+            }
         </style>
     </head>
     <body>
@@ -21,6 +26,15 @@
         </p>
         <p id="uniq">Some para</p>
         <p id="uniq">Some para</p>
+
+        <ul>
+            <li>Zero</li>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+            <li>Five</li>
+        </ul>
 
         <script>
             // Every element or tag in HTML is a DOM element
@@ -38,6 +52,19 @@
             console.log(document.querySelector("p"));
             console.log(document.querySelector(".para"));
             console.log(document.querySelector("#uniq"));
+
+            var liItems = document.querySelectorAll("li");
+            liItems[3].classList.value+=" diff";
+            // liItems[4].style.display="none";
+            liItems[4].style.visibility="hidden";
+            liItems[5].innerText="Fifty five";
+
+            // for(let i=0; i<liItems.length; i++) {
+            //     if(i==3) {
+            //         console.log(liItems);
+            //         liItems[i].classList.value+=" diff";
+            //     }
+            // }
         </script>
     </body>
 </html>
