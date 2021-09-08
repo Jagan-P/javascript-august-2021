@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+        <script>
+            // this will give null
+            console.log(document.querySelector("p"));
+        </script>
+        <style>
+            body {
+                padding-bottom: 1000px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>ABC</p>
+        <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__480.jpg" />
+        <script>
+            // this will give the element
+            console.log(document.querySelector("p"));
+            // hence we can conclude that scripts tag should be at the bottom of the html
+        </script>
+        <script>
+            // while dealing with images, though the script is at the end of body, we cannot get proper height and width. This is because images load bit by bit.
+            console.log("image height before load",document.querySelector("img").clientHeight);
+
+            window.onload = function() {
+                // adding scripts like querying the height of images will work fine inside onload function
+                console.log("image height after load",document.querySelector("img").clientHeight);
+            }
+        </script>
+        <script>
+            // one more way to add user events
+
+            document.querySelector("p").addEventListener("click",function() {
+                console.log("you clicked the paragraph");
+            });
+
+            window.onscroll = function() {
+                console.log("you are scrolling");
+            }
+        </script>
+    </body>
+</html>

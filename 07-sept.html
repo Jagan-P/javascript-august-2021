@@ -70,6 +70,12 @@
             // 1. I have an input box and a list below it
             // 2. As I type something in the input, my list should get filtered
             // 3. Basically hiding unmatched li(s)
+
+            // Approach
+            // 1. Add onkeyup event to input
+            // 2. This will call a function (this function can accept event target, which can give the input value)
+            // 3. Inside that function get all the list items (li)
+            // 4. Check the innerText property and if it matches, display block else display none
         </script>
     </body>
 </html>
