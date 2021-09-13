@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+        <style>
+            li {
+                list-style-type: none;
+                font-size: 22px;
+                padding: 10px;
+            }
+            ul {
+                padding-left: 0;
+            }
+            li:nth-child(odd) {
+                background-color: lightgray;
+            }
+
+        </style>
+    </head>
+    <body>
+        <input type="text" onkeyup="filter(event)"/>
+        <ul>
+            <li>Abc</li>
+            <li>Bdef</li>
+            <li>GHA</li>
+            <li>cdf</li>
+            <li>One</li>
+            <li>Two</li>
+        </ul>
+        <script>
+            function filter(event) {
+                let inputValue = event.target.value;
+                let liItems = document.querySelectorAll("li");
+                for(let i=0; i<liItems.length; i++) {
+                    // toLowerCase converts the entire string to lower case alphabets
+                    // indexOf will return the position of substring in the given string, here we are using to check if it is present
+                    if(liItems[i].innerText.toLowerCase().indexOf(inputValue.toLowerCase()) > -1 || inputValue.length==0) {
+                        liItems[i].style.display="block";
+                    }
+                    else {
+                        liItems[i].style.display="none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
