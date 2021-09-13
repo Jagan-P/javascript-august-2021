@@ -39,10 +39,22 @@
                         liItems[i].style.display="block";
                     }
                     else {
+                        console.log(liItems);
                         liItems[i].style.display="none";
                     }
                 }
             }
+        </script>
+        <script>
+            let customEvent = new Event("deploy");
+            document.querySelector("li").addEventListener("deploy", function () {
+                console.log("deploying");
+            })
+            document.querySelector("li").addEventListener("click", function () {
+                console.log("click deploying");
+            })
+            console.log(document.querySelector("li"));
+            document.querySelector("li").dispatchEvent(customEvent);
         </script>
     </body>
 </html>
