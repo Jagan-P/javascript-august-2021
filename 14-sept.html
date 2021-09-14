@@ -26,5 +26,22 @@
                 console.log("bodyClick")
             }
         </script>
+
+        <script>
+            console.log("before alert");
+            let alertReturn = alert("Alert, you did something");
+            console.log(alertReturn);
+
+            // the below console will not be seen until user clicks on "OK" for above alert function
+            console.log("after alert");
+
+            // the return type of prompt is a string which is the text the user typed in prompted input
+            let name = prompt("Enter your name");
+            console.log("user entered the name",name);
+
+            // the return type of confirm is a boolean, true for  "OK" and false for "Cancel"
+            let bool = confirm("Are you sure, you want to delete?");
+            console.log(bool);
+        </script>
     </body>
 </html>
