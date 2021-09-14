@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+    </head>
+    <body onclick="bodyClick()">
+        <p id="para">Para</p>
+
+        <div onclick="divClick()" style="width: 100%; height: 200px; padding-left: 50%; padding-top: 50%; background-color: red;">
+            <!-- clicking on the button will print both button click and div click by virtue of event bubbling -->
+            <!-- events bubble up the DOM tree always -->
+            <button onclick="buttonClick(event)">Clickable</button>
+        </div>
+
+        <script>
+            function divClick() {
+                console.log("you clicked the div");
+            }
+            function buttonClick(jagana) {
+                // stopPropagation prevents event bubbling
+                jagana.stopPropagation();
+                console.log("you clicked the button");
+            }
+            function bodyClick() {
+                console.log("bodyClick")
+            }
+        </script>
+    </body>
+</html>
