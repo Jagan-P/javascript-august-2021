@@ -6,14 +6,14 @@
     </head>
     <body>
         <input type="text">
-        <input value="abc" type="text">
+        <input value="abc" type="text" onkeyup="textNumChange(event)">
 
         <input type="number">
-        <input value="124" type="number">
+        <input value="124" onkeyup="textNumChange(event)" type="number">
 
-        <input type="radio" name="gender">
+        <input type="radio" onchange="optionChanged()" name="gender">
         <span>Male</span>
-        <input type="radio" name="gender">
+        <input type="radio" onchange="optionChanged()" name="gender">
         <span>Female</span>
 
         <input type="radio" name="gender1">
@@ -36,7 +36,7 @@
             <option value="4">Option 4</option>
         </select>
 
-        <select>
+        <select onchange="selectChange(event)">
             <option value="1">Option 1</option>
             <option selected value="2">Option 2</option>
             <option value="3">Option 3</option>
@@ -46,5 +46,38 @@
         <textarea rows="4"></textarea>
         <textarea rows="4">Some random text</textarea>
 
+        <script>
+            // For all number and text input boxes and textarea this is how we get the value
+            console.log(document.querySelectorAll("input")[1].value);
+            console.log(document.querySelectorAll("textarea")[1].value);
+
+            // For all number and text input boxes and textarea this is how we set the value
+            document.querySelectorAll("input")[0].value = "New value";
+
+            function textNumChange(event) {
+                console.log(event, event.target, event.target.value);
+            }
+
+            // for both radio button and checkbox this is how we get the value
+            console.log(document.getElementsByName("gender1")[0].checked)
+            console.log(document.getElementsByName("gender1")[1].checked)
+
+            // for both radio button and checkbox this is how we set the value
+            document.getElementsByName("gender")[0].checked = true;
+
+            function optionChanged() {
+                let genders = document.getElementsByName("gender");
+                for(let i=0; i<genders.length; i++) {
+                    console.log(genders[i].checked);
+                }
+            }
+
+            function selectChange(event) {
+                console.log(event.target.value)
+            }
+
+            // this is how we choose an option in select boxes
+            document.querySelector("select").value = "1"
+        </script>
     </body>
 </html>
