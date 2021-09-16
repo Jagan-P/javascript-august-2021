@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>JS</title>
+    </head>
+    <body>
+        <form method="POST" action="https://jsonplaceholder.typicode.com/posts">
+            <input required maxlength="5" name="username" type="text">
+            <input type="password">
+            <button type="submit">Submit</button>
+        </form>
+
+        <form method="POST" action="https://jsonplaceholder.typicode.com/posts">
+            <input name="email" type="text">
+            <p></p>
+            <button type="reset">Reset</button>
+        </form>
+        <button onclick="validateAndSubmit()">Submit</button>
+
+        <script>
+            function validateAndSubmit() {
+                let emailValue = document.querySelectorAll("input")[1].value;
+                if(emailValue.indexOf("@")>-1 && emailValue.indexOf(".com")>-1) {
+                    document.querySelectorAll("form")[1].submit();
+                }
+                else {
+                    document.querySelector("p").innerText = "Email is invalid";
+                }
+            }
+        </script>
+
+        <!-- Task
+        1. I have a registeration form
+        2. It has name, mobile number and email field (text, number, text fields)
+        3. It has state and district fields (select and select)
+        4. On choosing states, relevant districts should be shown (strings, innerHTML, loops, objects, string append)
+        5. Show relevant error message below each fields
+        6. The submit button should be enabled only when all fields are valid
+        7. The form should be submitted only when all fields are valid -->
+
+    </body>
+</html>
