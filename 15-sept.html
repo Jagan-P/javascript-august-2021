@@ -6,7 +6,7 @@
     </head>
     <body>
         <input type="text">
-        <input value="abc" type="text" onkeyup="textNumChange(event)">
+        <input value="abc" type="text" onkeyup="textNumChange(event)" onchange="textNumChange(event)" onfocus="textNumChange(event)">
 
         <input type="number">
         <input value="124" onkeyup="textNumChange(event)" type="number">
@@ -33,7 +33,7 @@
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
-            <option value="4">Option 4</option>
+            <option value="4">Option 4 new</option>
         </select>
 
         <select onchange="selectChange(event)">
@@ -77,7 +77,7 @@
             }
 
             // this is how we choose an option in select boxes
-            document.querySelector("select").value = "1"
+            document.querySelector("select").value = "4"
         </script>
     </body>
 </html>
