@@ -48,9 +48,12 @@
                 let possibleDistricts = stateDistrictMap[choosenState];
 
                 let districtString = "";
-                for(let district of possibleDistricts) {
-                    districtString+="<option value='"+district+"'>"+district+"</option>";
-                }
+                // for(let district of possibleDistricts) {
+                //     districtString+="<option value='"+district+"'>"+district+"</option>";
+                // }
+                districtString+="<option value='"+possibleDistricts[0]+"'>"+possibleDistricts[0]+"</option>";
+                districtString+="<option value='"+possibleDistricts[1]+"'>"+possibleDistricts[1]+"</option>";
+                districtString+="<option value='"+possibleDistricts[2]+"'>"+possibleDistricts[2]+"</option>";
                 console.log(districtString);
                 document.querySelectorAll("select")[1].innerHTML = districtString;
             }
