@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+    </head>
+    <body>
+        <form method="POST" action="https://jsonplaceholder.typicode.com/posts">
+            <input name="name" placeholder="Enter your name" type="text" onblur="validateForm()"/>
+            <input name="number" placeholder="Enter your number" type="number" onblur="validateForm()"/>
+            <input name="email" placeholder="Enter your email" type="email" onblur="validateForm()"/>
+    
+            <select name="state" onchange="populateDistrict(event)">
+                <option value="">Choose your state</option>
+                <option value="state1">State 1</option>
+                <option value="state2">State 2</option>
+                <option value="state3">State 3</option>
+            </select>
+            <select name="district">
+    
+            </select>
+    
+            <button type="submit" disabled>Submit</button>
+        </form>
+
+        <script>
+            function validateForm() {
+                let name = document.querySelectorAll("input")[0].value;
+                let number = document.querySelectorAll("input")[1].value;
+                let email = document.querySelectorAll("input")[2].value;
+
+                if(name.length==0 || number.length==0 || email.length==0) {
+
+                }
+                else if(number.length==10 && email.indexOf("@")>-1 && email.indexOf(".com")>-1) {
+                    document.querySelector("button").disabled = false;
+                }
+            }
+
+            function populateDistrict(event) {
+                let stateDistrictMap = {
+                    "state1": ["District 1", "District 2", "District 3"],
+                    "state2": ["District 4", "District 5", "District 6"],
+                    "state3": ["District 7", "District 8", "District 9"]
+                }
+                console.log(event.target.value, stateDistrictMap[event.target.value]);
+                let choosenState = event.target.value;
+                let possibleDistricts = stateDistrictMap[choosenState];
+
+                let districtString = "";
+                for(let district of possibleDistricts) {
+                    districtString+="<option value='"+district+"'>"+district+"</option>";
+                }
+                console.log(districtString);
+                document.querySelectorAll("select")[1].innerHTML = districtString;
+            }
+        </script>
+    </body>
+</html>
