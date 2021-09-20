@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+        <body>
+            <ul>
+
+            </ul>
+            <button onclick="getMessageFromServer()">Get list from server</button>
+            <ul id="message-from-server">
+
+            </ul>
+            <button onclick="testingThisScope()">Test this scope</button>
+        </body>
+        <script>
+            let liString="";
+            for(let i=0; i<100; i++) {
+                liString+="<li>"+i+"</li>"
+            }
+            document.querySelector("ul").innerHTML = liString;
+            let a = {
+                "p": "a"
+            }
+
+            let stringObject = '{"a":"b"'
+
+            // the below line will throw an error
+            // console.log(JSON.parse(stringObject));
+
+            console.log(JSON.parse(JSON.stringify(a)));
+        </script>
+        <script>
+            console.log(this); // this always refers to current scope
+            window.console.log("this data")
+            var message = "data";
+            let data = "abc";
+            function getMessageFromServer() {
+                const newAjax = new XMLHttpRequest();
+                newAjax.onload = function() {
+                    // document.getElementById("demo").innerHTML = this.responseText;
+                    console.log(this.withCredentials);
+                    // JSON  - Java Script Object Notation
+                    let data = this.responseText;
+                    console.log(JSON.parse(data));
+                    data = JSON.parse(data);
+
+                    let liString = "";
+
+                    for(let message of data) {
+                        liString+="<li>"+message.title+"</li>";
+                    }
+
+                    document.querySelector("#message-from-server").innerHTML = liString;
+                    
+                }
+                newAjax.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+                newAjax.send();  
+                console.log(newAjax.withCredentials);
+            }
+        </script>
+        <script>
+            function testingThisScope() {
+                console.log(this);
+            }
+        </script>
+    </head>
+</html>
