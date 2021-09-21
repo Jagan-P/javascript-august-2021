@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+    </head>
+    <body>
+        <form>
+            <input name="name" type="text"/>
+            <input name="email" type="email"/>
+        </form>
+        <button onclick="submitFormAjax()">Submit with ajax</button>
+
+        <script>
+            function submitFormAjax() {
+                const newAjax = new XMLHttpRequest();
+                newAjax.onload = function() {
+                    let data = this.responseText;
+                    console.log(this.responseText, this.status);        
+                }
+                newAjax.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
+                newAjax.send(
+                    JSON.stringify({
+                        name: document.getElementsByName("name")[0].value,
+                        email: document.getElementsByName("email")[0].value
+                    })
+                );
+            }  
+        </script>
+        <script>
+            let a = ["abc","Def"];
+            for(let element of a) {
+                console.log(element);
+            }
+            // VM176:3 abc
+            // VM176:3 Def
+            // undefined
+            let b = ["abc","Def"];
+            for(let i=0; i<b.length; i++) {
+                console.log(b[i]);
+            }
+            // VM244:3 abc
+            // VM244:3 Def
+            // undefined
+            b
+            // (2) ["abc", "Def"]
+        </script>
+
+    </body>
+</html>

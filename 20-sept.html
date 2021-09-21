@@ -47,9 +47,14 @@
 
                     let liString = "";
 
-                    for(let message of data) {
-                        liString+="<li>"+message.title+"</li>";
+                    // for(let message of data) {
+                    //     liString+="<li>"+message.title+"</li>";
+                    // }
+
+                    for(let i=0; i<data.length; i++) {
+                        liString+="<li>"+data[i].title+"</li>"
                     }
+                    
 
                     document.querySelector("#message-from-server").innerHTML = liString;
                     
