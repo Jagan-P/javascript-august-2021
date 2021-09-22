@@ -12,6 +12,8 @@
         <button onclick="submitFormAjax()">Submit with ajax</button>
         <p id="message"></p>
 
+        <button onclick="incrementCookie('mobiles')">Mobiles</button>
+        <button onclick="incrementCookie('computers')">Computers</button>
         <script>
             function submitFormAjax() {
                 const newAjax = new XMLHttpRequest();
@@ -60,6 +62,23 @@
             for(let i=0; i<cookies.length; i++) {
                 if(cookies[i].indexOf("Username")>-1) {
                     console.log(cookies[i])
+                }
+            }
+        </script>
+
+        <script>
+            document.cookie = "mobiles=0"
+            document.cookie = "computers=0"
+            function incrementCookie(cookieName) {
+                let cookies = document.cookie.split(";");
+                for(let i=0; i<cookies.length; i++) {
+
+                    if(cookies[i].indexOf(cookieName)>-1) {
+                        let count = cookies[i].split("=")[1];
+                        count = parseInt(count)+1;
+                        document.cookie=cookieName+"="+count;
+                        // console.
+                    }
                 }
             }
         </script>
