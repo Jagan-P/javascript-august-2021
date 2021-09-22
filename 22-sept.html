@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+    </head>
+    <body>
+        <form>
+            <input name="name" type="text"/>
+            <input name="email" type="email"/>
+        </form>
+        <button onclick="submitFormAjax()">Submit with ajax</button>
+        <p id="message"></p>
+
+        <script>
+            function submitFormAjax() {
+                const newAjax = new XMLHttpRequest();
+                newAjax.withCredentials = true;
+                newAjax.onload = function() {
+                    let data = this.responseText;
+                    console.log(this.responseText, this.status);
+                    data = JSON.parse(this.responseText);
+                    if(this.status==200 || this.status==201) {
+                        document.getElementById("message").innerText = "Successfully submitted. This is your id: "+data.id;
+                    }
+                    else {
+                        document.getElementById("message").innerText = "That didn't work, please try after some time";
+                    }    
+                }
+                newAjax.open("POST", "http://127.0.0.1:5500/scripts", true);
+                newAjax.send(
+                    JSON.stringify({
+                        name: document.getElementsByName("name")[0].value,
+                        email: document.getElementsByName("email")[0].value
+                    })
+                );
+            }  
+        </script>
+
+        <!-- task -->
+        <!-- 
+        1. Submit the form using ajax
+        2. Once the response is available from jsonplaceholder show the message "Successfully submitted. This is your id" and show the idin html below the submit button 
+        -->
+
+        <script>
+            // Cookies are used to store some information about the session in client side
+            // Cookies will be deleted when,
+            // 1. User closes the window
+            // 2. User clears cookies from "clear browsing data" (chrome)
+            // 3. Cookies gets deleted upon expiry
+            // 4. Cookies can be deleted from javascript
+
+            document.cookie = "Username=ABC";
+            document.cookie = "age=10";
+            document.cookie = "language=english;expires=Wed, 22 Sep 2021 15:03:00 UTC";
+
+            console.log(document.cookie.split(";"));
+            let cookies = document.cookie.split(";");
+            for(let i=0; i<cookies.length; i++) {
+                if(cookies[i].indexOf("Username")>-1) {
+                    console.log(cookies[i])
+                }
+            }
+        </script>
+    </body>
+</html>
