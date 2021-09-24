@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+    </head>
+    <body>
+        <ul>
+            <li>ABC</li>
+        </ul>
+
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>red</li>
+            <li>Four</li>
+        </ul>
+        <ol>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+        </ol>
+        <ol>
+            <li>red</li>
+            <li>green</li>
+            <li>green</li>
+            <li>Four</li>
+        </ol>
+        
+        <script>
+            let li = document.createElement("li");
+            li.innerText = "abc"
+            console.log(li);
+            // document.querySelector("li").insertAdjacentElement("afterend", li);
+            document.querySelector("ul").appendChild(li);
+
+            document.querySelector("ul").removeChild(
+                document.querySelector("li")
+            );
+
+            // DOM manipulation Task
+            // 1. I have 3 lists (ordered or unordered)
+            // 2. Each list item may have any text in it
+            // 3. On click of a button all lists (entire ul or ol) containing an item "red" should get deleted
+        </script>
+        <script>
+            let ul = document.querySelectorAll("ul");
+            let ol = document.querySelectorAll("ol");
+            let lists = [];
+            for(let olVar of ol) {
+                lists.push(olVar);
+            }
+            for(let ulVar of ul) {
+                lists.push(ulVar);
+            }
+            removeRedLists();
+            function removeRedLists() {
+                for(let list of lists) {
+                    let lis = list.querySelectorAll("li");
+                    
+                    for(let li of lis) {
+                        // console.log(li.innerText)
+                        if(li.innerText=="red") {
+                            // console.log(document.querySelector(list));
+                            
+                                document.querySelector("body").removeChild(list);
+                            
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
