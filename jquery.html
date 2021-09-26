@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            Jquery
+        </title>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script> -->
+        <script src="jquery-lib.js"></script>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <span>One</span>
+            </li>
+        </ul>
+        <script>
+            //in jquery
+            console.log($("body"));
+            // in javascript
+            console.log(document.querySelectorAll("body"));
+
+            //in jquery
+            console.log($("body").children());
+            // in javascript
+            console.log(document.querySelector("body").children);
+
+            //in jquery
+            console.log($("span").parentsUntil("html"))
+            // in javascript
+            let parents = [];
+            let currentDOM = document.querySelector("span");
+            while(currentDOM.parentNode) {
+                parents.push(currentDOM.parentNode);
+                currentDOM = currentDOM.parentNode;
+            }
+            console.log(parents);
+        </script>
+    </body>
+</html>

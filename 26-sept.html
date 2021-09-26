@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>
+            JS
+        </title>
+    </head>
+    <body>
+        <script>
+            // Date class is based on client machine, changing client machine time changes this.
+            let a = new Date();
+            // undefined
+            a
+            // Thu Jul 22 2021 18:48:37 GMT+0530 (India Standard Time)
+            a.getDate()
+            // 22
+            a.getMonth()  // zero-based index
+            // 6
+            a.getFullYear()
+            // 2021
+
+            // execute something after a predefined interval of time in milliseconds, the below is an arrow function
+            setTimeout(() => {
+                console.log("time up");
+            }, 3000);
+
+            setTimeout(function () {
+                console.log("time up");
+            }, 3000);
+
+            var interval = setInterval(()=>{
+                console.log("setInterval")
+            }, 3000);
+
+            // if you want to stop the interval call clearInterval and pass the reference
+            
+            setTimeout(()=>{
+                clearInterval(interval);
+            }, 9000);
+        </script>
+        <script>
+            // let details = {
+            //     "name": "Jagan",
+            //     "class": {
+            //         "number": 10
+            //     }
+            // }
+            let details = {
+                "name": "Jagan",
+            }
+            console.log(details.name);
+            // use if statements to safely access objects
+            if(details && details.class) {
+                console.log(details.class.number);
+            }
+
+            try {
+                console.log(details.class.number);
+            }
+            catch {
+                console.log("details doesn't have number information")
+            }
+
+            try {
+                if(details && details.class) {
+                    console.log(details.class.number);
+                }
+                else {
+                    throw("some error")
+                }
+            }
+            catch(e) {
+                console.log(e)
+            }
+        </script>
+    </body>
+</html>
