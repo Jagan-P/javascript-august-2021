@@ -23,7 +23,7 @@
         </ol>
         <ol>
             <li>red</li>
-            <li>green</li>
+            <li>red</li>
             <li>green</li>
             <li>Four</li>
         </ol>
@@ -63,12 +63,23 @@
                         // console.log(li.innerText)
                         if(li.innerText=="red") {
                             // console.log(document.querySelector(list));
-                            
+                            document.querySelector("body")
+                            if(checkIfExists(list)) {
                                 document.querySelector("body").removeChild(list);
-                            
+                            }                            
                         }
                     }
                 }
+            }
+
+            function checkIfExists(list) {
+                let children = document.querySelector("body").children;
+                for(let child of children) {
+                    if(child==list) {
+                        return true;
+                    }
+                }
+                return false;
             }
         </script>
     </body>
