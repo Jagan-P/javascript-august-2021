@@ -1,0 +1,11 @@
+1. Create a login page with username and password ("login.html")
+2. On submit, check if the user exists and if valid redirect to "ticket-booking.html"
+3. If user is invalid show error message in html
+4. On ticket booking page, collect three field (accept only one passenger initially)
+    a. Passenger name
+    b. Age
+    c. Gender
+5. Next to each field show the "plus" and "delete" icon or button
+6. Have a "Book" button at the bottom
+7. The button should be enabled only if user enter a valid number of the person who books the ticket
+8. Once the button is clicked clear all the inputs and redirect to login.html after 3 seconds
